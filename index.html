@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset=utf-8 />
+  <title>Kenya Education 2014 by County (Grades 1-8)</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+  <!-- ####### LOAD ASSEMBLY CSS ####### -->
+  <link href='https://api.mapbox.com/mapbox-assembly/v0.20.0/assembly.min.css' rel='stylesheet'>
+
+  <!-- ####### LOAD MAPBOX CSS ####### -->
+  <link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+
+  <!-- ####### LOAD STYLES.CSS FILE ####### -->
+  <link href='css/styles.css' rel='stylesheet' />
+
+  <!-- ####### LOAD WORK SANS FONT ####### -->
+  <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
+
+  <!-- ####### LOAD WORK OSWALD SERIF FONT ####### -->
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ####### ASSEMBLY FULL HEIGHT SIDEBAR EXAMPLE CODE ####### -->
+  <div class='flex-parent viewport-full relative scroll-hidden'>
+  <div class='flex-child w-full w300-ml absolute static-ml left bottom'>
+    <div class='flex-parent flex-parent--column viewport-third h-full hmax-full bg-white py18 px12'>
+      <div class='flex-child flex-child--grow px12 py12 scroll-auto'>
+        <h1 class='txt-h2 mb6'>Kenyan Public School Equity</h1>
+        <p>National boys and girls enrollments per class for primary school education (grades 1 - 8) by county.</p>
+        <h2 class='txt-xl mt18 mb12'>About the map:</h2>
+        <p>The map symbolizes the boys and girls primary school enrollment by placing two scaled circles centered in each county. The <font color="#6E77B0"><b>boys</b></font> enrollment is represented by a <font color="#6E77B0"><b>purple</b></font> circle and the <font color="#D96D02"><b>girls</b></font> by an <font color="#D96D02"><b>orange</b></font> circle. Data publish 2016.</p>
+      </div>
+      <footer class='px12 py12 bg-gray-faint txt-s'>
+        <ul>
+          <li><b>To explore the raw data
+            <a class='link' href='https://icta-kenyaopendata.opendata.arcgis.com/datasets/national-boys-and-girls-enrollments-per-class-for-primary-school-education/data'>click here</b></a>
+          </li>
+          <li><b>Map created by: &nbsp
+            <a class='link' href='https://jefftman24.github.io/Portfolio-Jeff-Tiemann/'>Jeff Tiemann</b></a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+  </div>
+  <div class='flex-child flex-child--grow viewport-twothirds viewport-full-ml'>
+    <div id="map" class='viewport-twothirds viewport-full-ml'></div>
+  </div>
+</div>
+
+    <!-- ######## UI SLIDER DIV ######## -->
+    <div id='slider' class='range w240 bg-white border border--gray-light round px12'>
+        <input type='range' min="1" , max="8" , value="1" , step="1" />
+      </div>
+
+      <!-- ####### GRADE DIV ######## -->
+      <div id='grade' class='bg-white border border--gray-light round pt6 px12'>
+          <p class='txt-bold'>Grade:
+              <span>1</span>
+          </p>
+      </div>
+
+
+    <!-- ####### LEGEND DIV ######## -->
+    <div id='legend' class='bg-white border border--gray-light round px12 py12 relative'>
+        <h3 class='txt-bold mb12 w180'><b>Number of <font color="#D96D02"><i>Girl</i></font> and <font color="#6E77B0"><i>Boy</i></font> students enrolled by county</h3>
+        <div class='legend-circles relative w180'>
+            <div class="legend-large border border--gray-light absolute"></div>
+            <div class="legend-small border border--gray-light absolute"></div>
+            <div class="legend-large-label txt-m absolute"></div>
+            <div class="legend-small-label txt-m absolute"></div>
+        </div>
+    </div>
+
+    <!-- ####### UI INFO PANEL ####### -->
+    <div id='info' class='py6 px12 bg-white border border--gray-light round absolute w240'>
+        <p><b>County:</b>
+            <span></span>
+        </p>
+        <p class='girls'>Girls
+            <span></span>:
+            <span class='txt-l txt-bold'></span>
+        </p>
+        <p class='boys'>Boys
+            <span></span>:
+            <span class='txt-l txt-bold'></span>
+        </p>
+        <hr class='txt-hr'>
+        <p class='my6'>Trend: grades 1 &ndash; 8</p>
+        <p class='mb6'><span class='girlspark'></span></p>
+        <p><span class='boyspark'></span></p>
+    </div>
+
+
+  <!-- ####### LOAD ASSEMBLY JS ####### -->
+  <script async defer src="https://api.mapbox.com/mapbox-assembly/v0.20.0/assembly.js"></script>
+
+  <!-- ####### LOAD MAPBOX JS ####### -->
+  <script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+
+  <!-- ####### LOAD MAPBOX LEAFLET OMNIVORE PLUGIN ####### -->
+  <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+
+  <!-- ####### LOAD APP.JS FILE ####### -->
+  <script src='js/app.js'></script>
+
+  <!-- ####### LOAD JQUERY ####### -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <!-- ####### LOAD SPARKLINE ####### -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
+
+</body>
+
+</html>
